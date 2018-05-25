@@ -26,6 +26,15 @@ const (
 	CompressionZSTD   CompressionCodec = 4
 )
 
+func (cc CompressionCodec) String() string {
+	return []string{
+		"none",
+		"gzip",
+		"snappy",
+		"lz4",
+	}[int(cc)]
+}
+
 // CompressionLevelDefault is the constant to use in CompressionLevel
 // to have the default compression level for any codec. The value is picked
 // that we don't use any existing compression levels.
